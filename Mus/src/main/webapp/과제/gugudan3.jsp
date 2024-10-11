@@ -27,7 +27,7 @@ td, tr {
 	 	if(dan < 10){  
 	 		out.print(dan + "단 입니다.");	
    	    } else {
-   	    	
+   	    	return ;
    	    }
 	}
 
