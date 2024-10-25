@@ -9,6 +9,22 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <context-param>
+  		<param-name>MySQLDriver</param-name>
+  		<param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
+  <context-param>
+  		<param-name>MySQLURL</param-name>
+  		<param-value>jdbc:mysql://localhost:3306/musthave</param-value>
+  </context-param>
+  <context-param>
+  		<param-name>MySQLId</param-name>
+  		<param-value>musthave</param-value>
+  </context-param>
+  <context-param>
+  		<param-name>MySQLPwd</param-name>
+  		<param-value>Tiger12#$</param-value>
+  </context-param>
   <!-- <error-page>
   	<error-code>404</error-code>
   	<location>/02ImplicitObject/Exception.jsp</location>
