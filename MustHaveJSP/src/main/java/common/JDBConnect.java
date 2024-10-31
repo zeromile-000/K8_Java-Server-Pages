@@ -18,12 +18,12 @@ public class JDBConnect {
     public JDBConnect() {
         try {
             // JDBC 드라이버 로드
-            Class.forName("oracle.jdbc.OracleDriver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
             // DB에 연결
-            String url = "jdbc:oracle:thin:@localhost:1521:xe";  
+            String url = "jdbc:mysql://localhost:3306/musthave";  
             String id = "musthave";
-            String pwd = "1234"; 
+            String pwd = "Tiger12#$"; 
             con = DriverManager.getConnection(url, id, pwd); 
 
             System.out.println("DB 연결 성공(기본 생성자)");
@@ -53,13 +53,13 @@ public class JDBConnect {
     public JDBConnect(ServletContext application) {
         try {
             // JDBC 드라이버 로드
-            String driver = application.getInitParameter("OracleDriver"); 
+            String driver = application.getInitParameter("MySQLDriver"); 
             Class.forName(driver); 
 
             // DB에 연결
-            String url = application.getInitParameter("OracleURL"); 
-            String id = application.getInitParameter("OracleId");
-            String pwd = application.getInitParameter("OraclePwd");
+            String url = application.getInitParameter("MySQLURL"); 
+            String id = application.getInitParameter("MySQLId");
+            String pwd = application.getInitParameter("MySQLPwd");
             con = DriverManager.getConnection(url, id, pwd);
 
             System.out.println("DB 연결 성공(인수 생성자 2)"); 

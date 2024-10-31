@@ -25,6 +25,9 @@
   		<param-name>MySQLPwd</param-name>
   		<param-value>Tiger12#$</param-value>
   </context-param>
+ <session-config>
+	<session-timeout> 20 </session-timeout>
+</session-config>
   <!-- <error-page>
   	<error-code>404</error-code>
   	<location>/02ImplicitObject/Exception.jsp</location>
