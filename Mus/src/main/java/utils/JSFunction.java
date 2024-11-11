@@ -43,7 +43,7 @@ public class JSFunction {
 		} catch(Exception e) {}
 	} // alertLocation 끝
 	
-	public static void alerBack(HttpServletResponse resp, String msg) {
+	public static void alertBack(HttpServletResponse resp, String msg) {
 		try {
 			resp.setContentType("text/html;charset=UTF-8");
 			PrintWriter writer = resp.getWriter();
@@ -55,6 +55,10 @@ public class JSFunction {
 			writer.print(script);
 		} catch(Exception e) {}
 	} // alerBack 끝
+
+	
+
+	
 	
 		
 	

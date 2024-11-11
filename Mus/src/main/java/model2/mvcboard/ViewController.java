@@ -1,6 +1,8 @@
 package model2.mvcboard;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -20,7 +22,21 @@ public class ViewController extends HttpServlet {
 		MVCBoardDTO dto = dao.selectView(idx);
 		dao.close();
 		
-		dao.setContent(dto.getContent().)
+		dto.setContent(dto.getContent().replaceAll("\r\n","<br/>"));
+		
+		String ext = null, fileName = dto.getSfile();
+		if(fileName!=null) {
+			ext = fileName.substring(fileName.lastIndexOf(".")+1);
+		}
+		String[] mimeStr = {"png","jpg","gif"};
+		List<String> mimeList = Arrays.asList(mimeStr);
+		boolean isImge = false;
+		if(mimeList.contains(ext)) {
+			isImge = true;
+		}
+		req.setAttribute("dto",dto);
+		req.setAttribute("isImge",isImge);
+		req.getRequestDispatcher("/14MVCBoard/View.jsp").forward(req, resp);
 		
 	} // service끝
 
